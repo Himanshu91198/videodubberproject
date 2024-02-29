@@ -1,9 +1,12 @@
 {
+  "homepage": "https://Himanshu91198.github.io/videodubberproject",
   "name": "videodubber",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages --d build",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -23,6 +26,7 @@
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
+    "gh-pages": "^6.1.1",
     "postcss": "^8.4.35",
     "postcss-preset-mantine": "^1.13.0",
     "postcss-simple-vars": "^7.0.1",
