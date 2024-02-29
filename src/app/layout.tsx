@@ -1,8 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localfont from "next/font/local";
 import "./globals.css";
+import { MantineProvider, createTheme } from "@mantine/core";
+import "@mantine/core/styles.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const theme = createTheme({});
+
+const averta = localfont({
+  src: [
+    {
+      path: "../../public/assets/fonts/AvertaStd-Regular-ca60f1dfe676a0b2f185812af147c08792cf392db5dcecdf5967b92914fc7c39.ttf",
+    },
+  ],
+  variable: "--font-averta",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +27,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${averta.variable} overflow-x-hidden overflow-y-scroll bg-[#FAFAFA] font-averta`}
+      >
+        <MantineProvider theme={theme}>{children}</MantineProvider>
+      </body>
     </html>
   );
 }

@@ -1,6 +1,6 @@
-import Image from "next/image";
-import { Index } from "./components/home/Index";
+import React from "react";
 
+import { Index } from "../components/contact/Index";
 
 export default function Home() {
   return (
